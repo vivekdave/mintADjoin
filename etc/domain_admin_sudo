@@ -1,0 +1,3 @@
+# the below file add all doman admins as 
+#Members of the admin group may gain root privileges” and there add the following "as-is": 
+%domain^admins ALL=(ALL) ALL

@@ -1,0 +1,127 @@
+/* ======================================
+ * ! Stark menu applet
+ * ====================================== */
+
+.starkmenu-background {
+	padding: 0;
+
+	.popup-menu-content {
+		border-image: url("img/containers/colored-bg.svg") 8;
+		padding: 8px;
+	}
+
+	.hover-box {
+		padding: 0 0 8px;
+
+		.hover-icon {
+			padding: 4px;
+		}
+
+		.hover-user-icon {
+			@extend .hover-icon;
+			border-image: url("img/containers/inner-bg.svg") 8;
+		}
+
+		.starkmenu-user-label {
+			padding: 0 8px;
+		}
+	}
+
+	.menu-applications-outer-box {
+		spacing: 0;
+	}
+
+	.menu-applications-scrollbox {
+		border-image: none;
+		padding: 0px;
+	}
+
+	.menu-categories-box {
+		border-image: none;
+	}
+
+	.menu-favorites-box {
+		padding: 1px;
+		border-image: url("img/containers/inner-bg.svg") 8;
+		color: $text-primary;
+
+		.menu-favorites-button {
+			color: $text-primary;
+			padding: 8px 16px;
+
+			&:hover {
+				border-image: url("img/containers/hover-popup.svg") 10;
+			}
+		}
+
+		.menu-category-button {
+			padding: 8px 16px;
+			spacing: 0px;
+
+			&-selected {
+				@extend .menu-category-button;
+				border-image: url("img/containers/hover-popup.svg") 10;
+			}
+
+			&-greyed {
+				padding: 8px 16px;
+			}
+
+			// "All programs" button
+			&:last-child {
+				padding: 8px;
+
+				> StIcon { padding: 0 8px; }
+			}
+		}
+
+		.menu-context-menu {
+			border-image: url("img/containers/popup-submenu.svg") 10;
+			padding: 1em .2em;
+		}
+	}
+
+	.right-buttons-box {
+		padding: 0;
+		color: $text-primary-invert;
+
+		.menu-category-button {
+			color: $text-primary-invert;
+
+			&-selected, &:hover {
+				color: $text-primary-invert;
+				border-image: url("img/containers/hover-transparent.svg") 10;
+			}
+		}
+
+		.popup-separator-menu-item {
+			-gradient-height: 1px;
+			height: 1px;
+			padding: 2px;
+		}
+
+		.starkhover-box {
+			// Shutdown dropdown menu (it has no class name)
+			StBin:last-child { border-image: none; }
+
+			.popup-menu-item {
+				color: $text-primary-invert;
+				&:active {
+					border-image: url("img/containers/hover-transparent.svg") 10;
+				}
+			}
+		}
+	}
+}
+
+.starkmenu-search-box {
+	border-image: url("img/containers/modal-button-box.svg") 8;
+	padding: 10px 9px 9px;
+}
+
+@each $action in quit, logout, lockscreen {
+	.starkmenu-#{$action}-horizontal-button,
+	.starkmenu-#{$action}-horizontal-button-selected {
+		padding: 0;
+	}
+}
